@@ -1,152 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- Page d'accueil provisoire du domaine (le site vitrine viendra plus tard,
+     cf. docs/actifs/ORDINA_WEB_PLAN.md). Le domaine sert avant tout aux
+     Universal Links (/auth/*) et à l'envoi d'e-mails (Resend). -->
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité — Ordina</title>
-  <meta name="description" content="Politique de confidentialité de l'application Ordina (gestion des commandes fournisseurs pour la restauration).">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ordina — Gestion des commandes fournisseurs</title>
   <style>
-    :root {
-      --background: #F5F2E8;
-      --surface: #FBF9F2;
-      --accent: #8B6F3E;
-      --text-primary: #2B2723;
-      --text-secondary: #6B6358;
-      --border: #E5DFD0;
-    }
-    * { box-sizing: border-box; }
+    :root { color-scheme: light; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text-primary);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      font-family: ui-rounded, -apple-system, "SF Pro Rounded", system-ui, sans-serif;
+      background: #F5F2E8; color: #3A3226;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 24px; text-align: center;
     }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
-    header { margin-bottom: 32px; }
-    h1 { font-size: 2rem; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.02em; }
-    h2 { font-size: 1.25rem; font-weight: 700; margin: 40px 0 12px; color: var(--accent); letter-spacing: -0.01em; }
-    h3 { font-size: 1.05rem; font-weight: 600; margin: 28px 0 10px; }
-    .meta { color: var(--text-secondary); font-size: 0.95rem; }
-    .meta strong { color: var(--text-primary); }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 4px 20px;
-      margin: 16px 0;
+    main { max-width: 460px; }
+    .mark {
+      width: 72px; height: 72px; border-radius: 50%; background: #8B6F3E;
+      color: #FBF9F2; font-size: 36px; font-weight: 700; line-height: 72px;
+      margin: 0 auto 24px;
     }
-    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
-    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    th { color: var(--accent); font-weight: 600; }
-    tr:last-child td { border-bottom: none; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .note { color: var(--text-secondary); font-size: 0.9rem; font-style: italic; }
-    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
-    footer { margin-top: 48px; color: var(--text-secondary); font-size: 0.85rem; }
-    code { background: var(--surface); padding: 1px 6px; border-radius: 6px; font-size: 0.9em; }
+    h1 { font-size: 26px; font-weight: 700; margin-bottom: 12px; }
+    p  { font-size: 16px; line-height: 1.55; color: #6B5F4A; }
+    a  { color: #8B6F3E; }
+    footer { margin-top: 32px; font-size: 13px; color: #9A8C72; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Politique de confidentialité — Ordina</h1>
-      <p class="meta">
-        <strong>Éditeur / Responsable de traitement :</strong> Thibault Fisset — personne physique (édition à titre individuel)<br>
-        <strong>Contact (exercice des droits) :</strong> <a href="mailto:thibault.fisset1@gmail.com">thibault.fisset1@gmail.com</a><br>
-        <strong>Date d'entrée en vigueur :</strong> 19/06/2026
-      </p>
-    </header>
-
-    <p class="note">Document rédigé selon le cadre RGPD et les exigences de l'App Store. Ne constitue pas un avis juridique.</p>
-
-    <h2>1. Objet</h2>
-    <p>Ordina est une application mobile de gestion des commandes fournisseurs destinée aux établissements de restauration. Cette politique décrit quelles données personnelles sont traitées, pourquoi, sur quelle base légale, combien de temps, et quels sont vos droits.</p>
-
-    <h2>2. Données traitées</h2>
-    <table>
-      <thead><tr><th>Catégorie</th><th>Données</th><th>Origine</th></tr></thead>
-      <tbody>
-        <tr><td>Compte utilisateur</td><td>Adresse email, mot de passe (haché, jamais lisible par l'éditeur), prénom, nom</td><td>Saisie par l'utilisateur</td></tr>
-        <tr><td>Organisation</td><td>Nom du restaurant, rôle (Gérant/Manager/Serveur), appartenance à l'établissement</td><td>Saisie / attribuée par le gérant</td></tr>
-        <tr><td>Membres d'équipe</td><td>Prénom, nom, email, rôle des collègues invités</td><td>Saisie par le gérant</td></tr>
-        <tr><td>Fournisseurs</td><td>Nom commercial/société, contact (nom, prénom), téléphones, emails, adresse, SIRET</td><td>Saisie par l'utilisateur</td></tr>
-        <tr><td>Catalogue &amp; commandes</td><td>Produits, prix, quantités, historique des commandes, auteur de la commande</td><td>Saisie / générée par l'usage</td></tr>
-        <tr><td>Images</td><td>Photos de produits, logos de fournisseurs</td><td>Saisie par l'utilisateur</td></tr>
-        <tr><td>Statistiques d'usage</td><td>Événements d'usage <strong>anonymes</strong> (ex. « commande envoyée »), <strong>sans aucune donnée personnelle</strong></td><td>Générées par l'app, <strong>uniquement si vous y consentez</strong></td></tr>
-        <tr><td>Journaux techniques</td><td>Erreurs techniques anonymisées (sans contenu personnel)</td><td>Générées par l'app</td></tr>
-      </tbody>
-    </table>
-    <p>Ordina <strong>ne collecte pas</strong> : données de localisation, données de santé, identifiants publicitaires. <strong>Aucun suivi publicitaire, aucun suivi inter-applications (tracking), aucun partage à des fins marketing.</strong></p>
-
-    <h2>3. Finalités &amp; bases légales</h2>
-    <table>
-      <thead><tr><th>Finalité</th><th>Base légale (RGPD)</th></tr></thead>
-      <tbody>
-        <tr><td>Fournir le service (catalogue, fournisseurs, commandes)</td><td>Exécution du contrat (art. 6.1.b)</td></tr>
-        <tr><td>Gestion des comptes et de l'équipe (rôles, invitations)</td><td>Exécution du contrat / intérêt légitime (art. 6.1.b/f)</td></tr>
-        <tr><td>Sécurité, prévention des abus, journalisation technique</td><td>Intérêt légitime (art. 6.1.f)</td></tr>
-        <tr><td>Statistiques d'usage anonymes (amélioration du produit)</td><td><strong>Consentement (art. 6.1.a)</strong> — opt-in, désactivé par défaut</td></tr>
-        <tr><td>Respect des obligations légales (ex. conservation comptable des commandes)</td><td>Obligation légale (art. 6.1.c)</td></tr>
-      </tbody>
-    </table>
-
-    <h2>4. Destinataires &amp; sous-traitants</h2>
-    <p>Les données sont accessibles aux membres autorisés du <strong>même établissement</strong> (cloisonnement technique par établissement). Sous-traitants :</p>
-    <ul>
-      <li><strong>Supabase</strong> (hébergement base de données, authentification, stockage de fichiers) — hébergement dans l'<strong>Union européenne</strong> (région <code>eu-west-3</code>, Paris). Un accord de traitement (DPA) est conclu avec Supabase.</li>
-      <li><strong>Aptabase</strong> (mesure d'audience <strong>anonyme</strong>, <strong>uniquement si vous activez les statistiques d'usage</strong>) — service d'analytics <em>open source</em> et <em>privacy-first</em>, <strong>hébergé dans l'Union européenne</strong> : les événements sont <strong>anonymisés et agrégés</strong> (aucun identifiant unique), <strong>aucune donnée personnelle</strong> ne lui est transmise (ni email, ni nom, ni contenu de commande). Aucun suivi inter-applications.</li>
-      <li><strong>Apple</strong> (distribution via l'App Store).</li>
-      <li>L'<strong>envoi des commandes</strong> s'effectue via l'application Mail/Messages de votre appareil : le contenu de la commande est transmis au fournisseur via votre propre messagerie/opérateur.</li>
-    </ul>
-    <p>Aucune donnée n'est vendue. Aucun transfert hors UE n'est effectué par défaut.</p>
-    <div class="card">
-      <p><strong>Consentement aux statistiques :</strong> les statistiques d'usage sont <strong>désactivées par défaut</strong> et ne sont transmises qu'après votre <strong>consentement explicite</strong> (Réglages → Confidentialité → « Statistiques d'usage anonymes »). Vous pouvez les <strong>désactiver à tout moment</strong> au même endroit.</p>
-    </div>
-
-    <h2>5. Durées de conservation</h2>
-    <table>
-      <thead><tr><th>Donnée</th><th>Durée</th></tr></thead>
-      <tbody>
-        <tr><td>Compte &amp; profil</td><td>Tant que le compte est actif ; suppression sur demande ou via la suppression de compte in-app</td></tr>
-        <tr><td>Invitations en attente</td><td>90 jours puis purge automatique</td></tr>
-        <tr><td>Historique des commandes</td><td>Durée d'exploitation + durée légale de conservation applicable</td></tr>
-        <tr><td>Statistiques d'usage anonymes</td><td>Agrégées, <strong>non rattachables à votre identité</strong> ; conservées par Aptabase selon sa propre politique</td></tr>
-        <tr><td>Journaux techniques</td><td>90 jours</td></tr>
-      </tbody>
-    </table>
-
-    <h2>6. Vos droits</h2>
-    <p>Conformément au RGPD, vous disposez des droits d'<strong>accès</strong>, de <strong>rectification</strong>, d'<strong>effacement</strong>, de <strong>limitation</strong>, d'<strong>opposition</strong> et de <strong>portabilité</strong>. Vous pouvez :</p>
-    <ul>
-      <li>modifier votre profil dans l'application (Réglages) ;</li>
-      <li><strong>supprimer votre compte</strong> depuis l'application (Réglages → Supprimer mon compte) ;</li>
-      <li><strong>retirer votre consentement</strong> aux statistiques d'usage à tout moment (Réglages → Confidentialité) ;</li>
-      <li>exercer tout autre droit en écrivant à <a href="mailto:thibault.fisset1@gmail.com">thibault.fisset1@gmail.com</a>.</li>
-    </ul>
-    <p>Vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
-
-    <h2>7. Sécurité</h2>
-    <p>Les communications sont chiffrées (HTTPS/TLS). Les jetons de session sont stockés dans le <strong>Trousseau (Keychain)</strong> sécurisé de l'appareil. L'accès aux données est cloisonné par établissement au niveau de la base (Row-Level Security). Les mots de passe ne sont jamais stockés en clair. Les <strong>images</strong> (photos de produits, logos) sont hébergées dans l'UE et leur <strong>accès est restreint aux membres de votre établissement</strong> via des <strong>liens signés à durée limitée</strong> (stockage non public).</p>
-
-    <h2>8. Mineurs</h2>
-    <p>Ordina est un outil professionnel non destiné aux mineurs ; aucune donnée de mineur n'est sciemment collectée.</p>
-
-    <h2>9. Modifications</h2>
-    <p>Cette politique peut évoluer. La date d'entrée en vigueur en haut du document indique la dernière mise à jour. Les changements substantiels seront signalés dans l'application.</p>
-
-    <h2>10. Contact</h2>
-    <p>Pour toute question relative à vos données : <a href="mailto:thibault.fisset1@gmail.com">thibault.fisset1@gmail.com</a>.</p>
-
-    <h2>11. Conditions d'utilisation (CLUF)</h2>
-    <p>L'utilisation d'Ordina est régie par le <strong>Contrat de Licence Utilisateur Final (CLUF) standard d'Apple</strong> (« Licensed Application End User License Agreement »), accessible ici :<br>
-    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
-
+  <main>
+    <div class="mark">O</div>
+    <h1>Ordina</h1>
+    <p>La gestion des commandes fournisseurs pour la restauration, pensée pour l'iPhone. Bientôt sur l'App Store.</p>
     <footer>
-      © 2026 Thibault Fisset — Ordina. Tous droits réservés.
+      <a href="/confidentialite/">Politique de confidentialité</a>
     </footer>
-  </div>
+  </main>
 </body>
 </html>

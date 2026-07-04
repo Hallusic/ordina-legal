@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Page relais Universal Link → app. Reçue en `redirect_to` de Supabase
+     (invitation d'un membre d'équipe), elle retransmet le lien à l'app via
+     le custom scheme `ordina://` (les Universal Links ne se déclenchent pas
+     sur une redirection serveur — il faut un vrai geste ou un relais). -->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Ordina — Invitation d'équipe</title>
+  <style>
+    :root { color-scheme: light; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: ui-rounded, -apple-system, "SF Pro Rounded", system-ui, sans-serif;
+      background: #F5F2E8; color: #3A3226;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 24px; text-align: center;
+    }
+    main {
+      background: #FBF9F2; border: 1px solid rgba(139, 111, 62, 0.18);
+      border-radius: 24px; padding: 40px 28px; max-width: 420px; width: 100%;
+    }
+    .mark {
+      width: 64px; height: 64px; border-radius: 50%; background: #8B6F3E;
+      color: #FBF9F2; font-size: 32px; font-weight: 700; line-height: 64px;
+      margin: 0 auto 20px;
+    }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    p  { font-size: 15px; line-height: 1.5; color: #6B5F4A; }
+    .btn {
+      display: inline-block; margin: 24px 0 16px; padding: 14px 28px;
+      background: #8B6F3E; color: #FBF9F2; text-decoration: none;
+      border-radius: 999px; font-weight: 600; font-size: 16px;
+    }
+    .hint { font-size: 13px; color: #9A8C72; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark">O</div>
+    <h1>Invitation d'équipe</h1>
+    <p>Nous ouvrons l'application Ordina pour rejoindre votre restaurant…</p>
+    <a id="open" class="btn" href="ordina://invite-callback">Ouvrir dans Ordina</a>
+    <p class="hint">Rien ne se passe&nbsp;? Ouvrez ce lien sur votre iPhone, avec Ordina installée.</p>
+  </main>
+  <script>
+    (function () {
+      // Retransmet code PKCE (?code=…) et éventuels tokens (#access_token=…)
+      // tels quels — l'app valide le lien via son allowlist (SEC-10).
+      var target = "ordina://invite-callback" + window.location.search + window.location.hash;
+      document.getElementById("open").setAttribute("href", target);
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>

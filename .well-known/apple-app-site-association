@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["MRY2U4U4WF.Hallusic.Ordina"],
+        "components": [
+          { "/": "/auth/*", "comment": "Callbacks d'authentification (confirmation, récupération, invitation)" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["MRY2U4U4WF.Hallusic.Ordina"]
+  }
+}
