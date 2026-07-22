@@ -47,8 +47,11 @@
   </main>
   <script>
     (function () {
-      // Retransmet code PKCE (?code=…) et éventuels tokens (#access_token=…)
-      // tels quels — l'app valide le lien via son allowlist (SEC-10).
+      // Retransmet code PKCE (?code=…) ET les tokens du fragment
+      // (#access_token=…) : l'invitation est le SEUL flux où le fragment est
+      // légitime — lien généré côté serveur (`generateLink`), aucun code
+      // verifier local, PKCE impossible. L'app n'accepte ce fragment que pour
+      // ce callback (SEC-16), après validation de l'allowlist (SEC-10).
       var target = "ordina://invite-callback" + window.location.search + window.location.hash;
       document.getElementById("open").setAttribute("href", target);
       window.location.replace(target);

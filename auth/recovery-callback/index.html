@@ -47,9 +47,11 @@
   </main>
   <script>
     (function () {
-      // Retransmet code PKCE (?code=…) et éventuels tokens (#access_token=…)
-      // tels quels — l'app valide le lien via son allowlist (SEC-10).
-      var target = "ordina://recovery-callback" + window.location.search + window.location.hash;
+      // Retransmet UNIQUEMENT le code PKCE (?code=…). Le fragment
+      // (#access_token=…) est volontairement ignoré : la réinitialisation est
+      // initiée par l'app (code verifier local), un fragment de tokens ne
+      // peut être que forgé — fixation de session (SEC-16).
+      var target = "ordina://recovery-callback" + window.location.search;
       document.getElementById("open").setAttribute("href", target);
       window.location.replace(target);
     })();
