@@ -56,7 +56,7 @@
       <p class="meta">
         <strong>Éditeur / Responsable de traitement :</strong> Thibault Fisset — personne physique (édition à titre individuel)<br>
         <strong>Contact (exercice des droits) :</strong> <a href="mailto:contact@ordina-app.fr">contact@ordina-app.fr</a><br>
-        <strong>Date d'entrée en vigueur :</strong> 05/07/2026
+        <strong>Date d'entrée en vigueur :</strong> 30/09/2026
       </p>
     </header>
 
@@ -75,7 +75,7 @@
         <tr><td>Fournisseurs</td><td>Nom commercial/société, contact (nom, prénom), téléphones, emails, adresse, SIRET</td><td>Saisie par l'utilisateur</td></tr>
         <tr><td>Catalogue &amp; commandes</td><td>Produits, prix, quantités, historique des commandes, auteur de la commande</td><td>Saisie / générée par l'usage</td></tr>
         <tr><td>Images</td><td>Photos de produits, logos de fournisseurs</td><td>Saisie par l'utilisateur</td></tr>
-        <tr><td>Statistiques d'usage</td><td>Événements d'usage <strong>anonymes</strong> (ex. « commande envoyée »), <strong>sans aucune donnée personnelle</strong></td><td>Générées par l'app, <strong>uniquement si vous y consentez</strong></td></tr>
+        <tr><td>Statistiques d'usage</td><td>Événements d'usage <strong>anonymes</strong> (ex. « commande envoyée »), <strong>sans aucune donnée personnelle</strong></td><td>Générées par l'app, <strong>sauf si vous les désactivez</strong></td></tr>
         <tr><td>Journaux techniques</td><td>Erreurs techniques anonymisées (sans contenu personnel)</td><td>Générées par l'app</td></tr>
       </tbody>
     </table>
@@ -88,7 +88,7 @@
         <tr><td>Fournir le service (catalogue, fournisseurs, commandes)</td><td>Exécution du contrat (art. 6.1.b)</td></tr>
         <tr><td>Gestion des comptes et de l'équipe (rôles, invitations)</td><td>Exécution du contrat / intérêt légitime (art. 6.1.b/f)</td></tr>
         <tr><td>Sécurité, prévention des abus, journalisation technique</td><td>Intérêt légitime (art. 6.1.f)</td></tr>
-        <tr><td>Statistiques d'usage anonymes (amélioration du produit)</td><td><strong>Consentement (art. 6.1.a)</strong> — opt-in, désactivé par défaut</td></tr>
+        <tr><td>Statistiques d'usage anonymes (amélioration du produit)</td><td><strong>Intérêt légitime (art. 6.1.f)</strong> — mesure d'audience anonyme, activée par défaut ; vous pouvez vous y opposer à tout moment</td></tr>
         <tr><td>Respect des obligations légales (ex. conservation comptable des commandes)</td><td>Obligation légale (art. 6.1.c)</td></tr>
       </tbody>
     </table>
@@ -97,14 +97,15 @@
     <p>Les données sont accessibles aux membres autorisés du <strong>même établissement</strong> (cloisonnement technique par établissement). Sous-traitants :</p>
     <ul>
       <li><strong>Supabase</strong> (hébergement base de données, authentification, stockage de fichiers) — hébergement dans l'<strong>Union européenne</strong> (région <code>eu-west-3</code>, Paris). Un accord de traitement (DPA) est conclu avec Supabase.</li>
-      <li><strong>Aptabase</strong> (mesure d'audience <strong>anonyme</strong>, <strong>uniquement si vous activez les statistiques d'usage</strong>) — service d'analytics <em>open source</em> et <em>privacy-first</em>, <strong>hébergé dans l'Union européenne</strong> : les événements sont <strong>anonymisés et agrégés</strong> (aucun identifiant unique), <strong>aucune donnée personnelle</strong> ne lui est transmise (ni email, ni nom, ni contenu de commande). Aucun suivi inter-applications.</li>
+      <li><strong>Aptabase</strong> (mesure d'audience <strong>anonyme</strong>, <strong>sauf si vous désactivez les statistiques d'usage</strong>) — service d'analytics <em>open source</em> et <em>privacy-first</em>, <strong>hébergé dans l'Union européenne</strong> : les événements sont <strong>anonymisés et agrégés</strong> (aucun identifiant unique), <strong>aucune donnée personnelle</strong> ne lui est transmise (ni email, ni nom, ni contenu de commande). Aucun suivi inter-applications.</li>
       <li><strong>Apple</strong> (distribution via l'App Store).</li>
       <li><strong>Resend</strong> (envoi des e-mails transactionnels : commandes aux fournisseurs, e-mails de compte type confirmation d'inscription). Le contenu de la commande (produits, quantités) et l'adresse e-mail du fournisseur transitent par ce service au moment de l'envoi. Resend est un prestataire américain : ce traitement peut impliquer un <strong>transfert hors UE</strong>, encadré par un accord de traitement (DPA) incluant les <strong>clauses contractuelles types</strong> de la Commission européenne.</li>
       <li>L'<strong>envoi des commandes par SMS</strong> s'effectue via l'application Messages de votre appareil : le contenu est transmis au fournisseur via votre propre opérateur.</li>
     </ul>
     <p>Aucune donnée n'est vendue. Hors l'envoi d'e-mails ci-dessus, aucun transfert hors UE n'est effectué : les données sont stockées dans l'Union européenne.</p>
     <div class="card">
-      <p><strong>Consentement aux statistiques :</strong> les statistiques d'usage sont <strong>désactivées par défaut</strong> et ne sont transmises qu'après votre <strong>consentement explicite</strong> (Réglages → Confidentialité → « Statistiques d'usage anonymes »). Vous pouvez les <strong>désactiver à tout moment</strong> au même endroit.</p>
+      <p><strong>Statistiques d'usage :</strong> elles sont <strong>activées par défaut</strong>, car elles sont anonymes et servent uniquement à améliorer l'application. Vous pouvez les <strong>désactiver à tout moment</strong> (Réglages → Confidentialité → « Statistiques d'usage anonymes ») : plus aucune statistique n'est alors transmise depuis votre appareil.</p>
+      <p><strong>Mode découverte (sans compte) :</strong> lorsque vous explorez l'application <strong>sans créer de compte</strong>, quelques mesures <strong>strictement anonymes</strong> sur le déroulé de la découverte (ex. « entrée en mode découverte », « première commande composée », « moment où la création de compte est proposée ») peuvent être transmises à Aptabase pour nous aider à améliorer ce parcours. Ces mesures <strong>ne contiennent aucune donnée personnelle</strong> et ne sont <strong>rattachables à aucune personne identifiable</strong> (donnée anonymisée au sens du considérant 26 du RGPD). Les Réglages n'étant accessibles qu'avec un compte, ces mesures ne peuvent pas être désactivées pendant la découverte ; une fois votre compte créé, le réglage ci-dessus s'applique à toutes les statistiques.</p>
     </div>
 
     <h2>5. Durées de conservation</h2>
@@ -124,7 +125,7 @@
     <ul>
       <li>modifier votre profil dans l'application (Réglages) ;</li>
       <li><strong>supprimer votre compte</strong> depuis l'application (Réglages → Supprimer mon compte) ;</li>
-      <li><strong>retirer votre consentement</strong> aux statistiques d'usage à tout moment (Réglages → Confidentialité) ;</li>
+      <li><strong>vous opposer</strong> aux statistiques d'usage à tout moment (Réglages → Confidentialité) ;</li>
       <li>exercer tout autre droit en écrivant à <a href="mailto:contact@ordina-app.fr">contact@ordina-app.fr</a>.</li>
     </ul>
     <p>Vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
